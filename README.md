@@ -16,7 +16,7 @@ This Infrastructure Platform repository is designed for back-end projects and pr
 ## Platforms for Full-Stack Project
 
 - API: [Apache 2.4 + PHP 8.5](./platforms/httpd-php-8.5/README.md)
-- Database: [Postgres 18](./platforms/pgsql-18/README.md)
+- Database: [Postgres 18+](./platforms/pgsql-18/README.md)
 - Mail Service: [MailHog 1+](./platforms/mailhog-1/README.md)
 - Message Broker: [RabbitMQ 4+](./platforms/rabbitmq-4/README.md)
 <br><br>
@@ -75,6 +75,7 @@ By leveraging Platform Engineering principles, this project reduces cognitive lo
 
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Windows WSL2](https://img.shields.io/badge/Windows-WSL2-4E9A06?style=for-the-badge&logo=windows&logoColor=white)
 ![MacOS](https://img.shields.io/badge/MacOS-f0f0f0?logo=apple&logoColor=black&style=for-the-badge)
 ![gnu](https://img.shields.io/badge/gnu-%23A42E2B.svg?style=for-the-badge&logo=gnu&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
