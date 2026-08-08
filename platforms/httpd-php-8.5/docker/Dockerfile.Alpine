@@ -1,5 +1,4 @@
 ## Sources to build the container
-FROM alpine:3.24
 FROM php:8.5-fpm-alpine
 
 RUN apk add --no-cache bash
@@ -49,18 +48,18 @@ RUN set -xe \
         patch \
         openssh-client
 
+## PHP and modules required
 RUN apk add --no-cache \
   php85 \
   php85-cli \
+  php85-fpm \
   php85-ctype \
   php85-curl \
   php85-dom \
   php85-fileinfo \
-  php85-fpm \
   php85-gd \
   php85-intl \
   php85-mbstring \
-  php85-opcache \
   php85-openssl \
   php85-phar \
   php85-session \
@@ -70,15 +69,8 @@ RUN apk add --no-cache \
   php85-xmlreader \
   php85-xmlwriter \
   php85-simplexml \
-  # Databases
-  php85-pdo \
-  ## SQLite
-  php85-pdo_sqlite \
-  php85-sqlite3 \
-  # Postgres
-  php85-pgsql \
-  php85-pdo_pgsql \
-  postgresql-dev \
+  php85-zip \
+  php85-bcmath \
   ### Databases ###
   php85-pdo \
   ## SQLite
@@ -104,18 +96,18 @@ RUN apk add --no-cache \
 
 ## PHP required extensions from Docker
 RUN docker-php-ext-install \
-  pdo \
-  #zip \
-  #gd \
-  #bcmath \
-  ## Mysql - Mariadb
-  #pdo_mysql \
-  ## Postgre
-  pdo_pgsql \
-  ## Sockets
-  sockets \
-  ## Process Control (jobs)
-  pcntl
+    pdo \
+    #zip \
+    #gd \
+    #bcmath \
+    ## Mysql - Mariadb
+    #pdo_mysql \
+    ## Postgre
+    pdo_pgsql \
+    ## Sockets
+    sockets \
+    ## Process Control (jobs)
+    pcntl
 
 ## If php85-pecl-amqp is not used, install amqp via PECL for clients that use the native ext-amqp like RabbitMQ
 #RUN set -eux; \
@@ -141,14 +133,17 @@ COPY config/httpd/conf.d/ /etc/apache2/conf.d/
 RUN rm -rf /var/www/localhost/htdocs
 
 # Configure PHP-FPM
-COPY config/php/fpm-pool.conf /etc/php85/php-fpm.d/www.conf
-COPY config/php/php.ini /etc/php85/conf.d/custom.ini
+COPY config/php/conf.d/fpm-pool.conf /etc/php85/php-fpm.d/www.conf
+COPY config/php/conf.d/php.ini /etc/php85/conf.d/custom.ini
 
 # Configure Supervisor
 COPY config/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 COPY config/supervisor/conf.d/. /etc/supervisor/conf.d/
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+## Configure XDebug - (optional - uncomment line to use it)
+#COPY config/php/xdebug.ini /etc/php85/conf.d/xdebug.ini
 
 RUN ln -s -f /usr/bin/php85 /usr/bin/php
 
