@@ -240,7 +240,7 @@ Once variables are set, each Docker platform container environment variables can
   ```bash
   $ make broker-set
   ```
-<br>
+
 
 ## <a id="platforms-startup"></a>Platforms Startup
 
