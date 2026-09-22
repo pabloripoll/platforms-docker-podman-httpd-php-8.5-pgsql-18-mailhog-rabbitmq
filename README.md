@@ -36,6 +36,7 @@ By decoupling the runtime services, this boilerplate ensures your primary applic
 - [Using this Repository for Custom Project](#platform-usage)
 <br><br>
 
+
 ## <a id="repository-objectives"></a>Repositoy Objectives
 
 ### Key principles and goals
