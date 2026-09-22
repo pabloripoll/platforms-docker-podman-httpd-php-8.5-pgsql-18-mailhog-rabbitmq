@@ -61,7 +61,6 @@ By leveraging Platform Engineering principles, this project reduces cognitive lo
 - Golden Paths: Predefined, optimized workflows and best practices that developers can follow to accomplish common tasks quickly and easily.
 
 - Treating the platform as a product: Platform engineers treat their IDP like a product, with developers as their customers, to ensure it meets the needs of the organization.
-<br>
 
 ### Read more:
 
@@ -72,6 +71,7 @@ By leveraging Platform Engineering principles, this project reduces cognitive lo
 - [What is platform engineering? - Microsoft](https://learn.microsoft.com/en-us/platform-engineering/what-is-platform-engineering)
 - [What is Platform engineering? - Github](https://github.com/resources/articles/what-is-platform-engineering)
 <br><br>
+
 
 ## <a id="orchestration"></a>Orchestration & Platform Specifics
 
@@ -240,7 +240,7 @@ Once variables are set, each Docker platform container environment variables can
   ```bash
   $ make broker-set
   ```
-<br><br>
+<br>
 
 ## <a id="platforms-startup"></a>Platforms Startup
 
