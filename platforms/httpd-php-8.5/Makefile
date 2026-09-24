@@ -100,7 +100,7 @@ else
 	echo ${C_BLU}"$(PROJECT_NAME)"${C_END}" API REST "${C_YEL}$(DOCKER_PLTF)${C_END}" - Container name: "${C_GRN}$(DOCKER_CONTAINER)${C_END}
 	echo ${C_BLU}"$(PROJECT_NAME)"${C_END}" API REST "${C_YEL}$(DOCKER_PLTF)${C_END}" - Container image: "${C_GRN}$(DOCKER_CONTAINER):$(DOCKER_IMGK)${C_END}
 	echo ${C_BLU}"$(PROJECT_NAME)"${C_END}" API REST "${C_YEL}$(DOCKER_PLTF)${C_END}" - Max. CPUs: "${C_GRN}$(DOCKER_CPUS)${C_END}
-	echo ${C_BLU}"$(PROJECT_NAME)"${C_END}" API REST "${C_YEL}$(DOCKER_PLTF)${C_END}" - Max. memory: "${C_GRN}$(DOCKER_MEM)${C_END}" - Swap: "${C_GRN}$(DOCKER_SWAP)${C_END}
+	echo ${C_BLU}"$(PROJECT_NAME)"${C_END}" API REST "${C_YEL}$(DOCKER_PLTF)${C_END}" - Max. memory: "${C_GRN}$(DOCKER_MEMO)${C_END}" - Swap: "${C_GRN}$(DOCKER_SWAP)${C_END}
 	echo ${C_BLU}"$(PROJECT_NAME)"${C_END}" API REST "${C_YEL}$(DOCKER_PLTF)${C_END}" - Localhost: http://127.0.0.1:"${C_GRN}"$(DOCKER_PORT)"${C_END};
 	echo ${C_BLU}"$(PROJECT_NAME)"${C_END}" API REST "${C_YEL}$(DOCKER_PLTF)${C_END}" - Hostname: http://$(word 1,$(shell hostname -I)):"${C_GRN}"$(DOCKER_PORT)"${C_END};
 endif
@@ -116,7 +116,7 @@ info: ## shows container information
 	echo ${C_YEL}"Name.........: "${C_END}$(DOCKER_CONTAINER);
 	echo ${C_YEL}"Image........: "${C_END}"$(DOCKER_CONTAINER):$(DOCKER_IMGK)";
 	echo ${C_YEL}"CPUs.........: "${C_END}"$(DOCKER_CPUS)";
-	echo ${C_YEL}"RAM..........: "${C_END}"$(DOCKER_MEM)";
+	echo ${C_YEL}"RAM..........: "${C_END}"$(DOCKER_MEMO)";
 	echo ${C_YEL}"SWAP.........: "${C_END}"$(DOCKER_SWAP)";
 	echo ${C_YEL}"Host.........: "${C_END}"$(DOCKER_HOST):$(DOCKER_PORT)";
 	echo ${C_YEL}"Hostname.....: "${C_END}"$(word 1,$(shell hostname -I)):"$(DOCKER_PORT);
